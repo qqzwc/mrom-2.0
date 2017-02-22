@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="aosp"
+           fetch="https://android.googlesource.com"
+           review="android-review.googlesource.com"
+           revision="refs/tags/android-6.0.1_r78" />
+
+  <remote  name="aospa"
+           fetch="https://github.com/AOSPA"
+           revision="nougat-mr1"/>
+
+  <remote  name="github"
+           fetch=".."
+           review="review.lineageos.org" />
+
+  <remote  name="private"
+           fetch="ssh://git@github.com" />
+
+  <default revision="refs/heads/cm-13.0"
+           remote="github"
+           sync-c="true"
+           sync-j="4" />
+
+  <!-- TODO: Add: device/qcom/common, libseccomp-helper, dependency fetching and own busybox fork. -->
+
+  <!-- Main -->
+  <project path="build" name="LineageOS/android_build" groups="pdk" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+  </project>
+  <project path="bionic" name="LineageOS/android_bionic" groups="pdk" />
+  <project path="frameworks/native" name="LineageOS/android_frameworks_native" groups="pdk" />
+  <project path="hardware/libhardware" name="LineageOS/android_hardware_libhardware" groups="pdk" />
+  <project path="system/keymaster" name="LineageOS/android_system_keymaster" groups="pdk" />
+  <project path="libcore" name="LineageOS/android_libcore" groups="pdk" />
+  <project path="libnativehelper" name="LineageOS/android_libnativehelper" groups="pdk" />
+
+  <!-- Devices -->
+  <project path="device/qcom/sepolicy" name="LineageOS/android_device_qcom_sepolicy" />
+
+  <!-- External -->
+  <project path="external/bison" name="platform/external/bison" groups="pdk" remote="aosp" />
+  <project path="external/boringssl" name="LineageOS/android_external_boringssl" groups="pdk" />
+  <project path="external/bouncycastle" name="LineageOS/android_external_bouncycastle" groups="pdk" />
+  <project path="external/busybox" name="LineageOS/android_external_busybox" groups="pdk" />
+  <project path="external/bzip2" name="LineageOS/android_external_bzip2" groups="pdk" />
+  <project path="external/clang" name="platform/external/clang" groups="pdk" remote="aosp" />
+  <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="pdk" remote="aosp" />
+  <project path="external/e2fsprogs" name="LineageOS/android_external_e2fsprogs" groups="pdk" />
+  <project path="external/elfutils" name="LineageOS/android_external_elfutils" groups="pdk" />
+  <project path="external/exfat" name="LineageOS/android_external_exfat" />
+  <project path="external/f2fs-tools" name="LineageOS/android_external_f2fs-tools" groups="pdk" />
+  <project path="external/freetype" name="platform/external/freetype" groups="pdk" remote="aosp" />
+  <project path="external/fuse" name="LineageOS/android_external_fuse" />
+  <project path="external/gptfdisk" name="LineageOS/android_external_gptfdisk" groups="pdk-fs" />
+  <project path="external/icu" name="LineageOS/android_external_icu" groups="pdk" />
+  <project path="external/jemalloc" name="platform/external/jemalloc" groups="pdk" remote="aosp" />
+  <project path="external/jpeg" name="LineageOS/android_external_jpeg" groups="pdk" />
+  <project path="external/libcxx" name="platform/external/libcxx" groups="pdk" remote="aosp" />
+  <project path="external/libcxxabi" name="platform/external/libcxxabi" groups="pdk" remote="aosp" />
+  <project path="external/libdrm" name="platform/external/libdrm" groups="pdk" remote="aosp" />
+  <project path="external/libnl" name="platform/external/libnl" groups="pdk" remote="aosp" />
+  <project path="external/libpng" name="platform/external/libpng" groups="pdk" remote="aosp" />
+  <project path="external/libselinux" name="LineageOS/android_external_libselinux" groups="pdk" />
+  <project path="external/libunwind" name="platform/external/libunwind" groups="pdk" remote="aosp" />
+  <project path="external/llvm" name="platform/external/llvm" groups="pdk" remote="aosp" />
+  <project path="external/ltrace" name="platform/external/ltrace" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
+  <project path="external/lz4" name="LineageOS/android_external_lz4" groups="pdk-cw-fs,pdk-fs" />
+  <project path="external/lzma" name="LineageOS/android_external_lzma" groups="pdk" />
+  <project path="external/mksh" name="LineageOS/android_external_mksh" groups="pdk" />
+  <project path="external/ntfs-3g" name="LineageOS/android_external_ntfs-3g" />
+  <project path="external/pcre" name="LineageOS/android_external_pcre" groups="pdk" />
+  <project path="external/safe-iop" name="platform/external/safe-iop" groups="pdk" remote="aosp" />
+  <project path="external/selinux" name="platform/external/selinux" groups="pdk" remote="aosp" />
+  <project path="external/squashfs-tools" name="platform/external/squashfs-tools" groups="pdk" remote="aosp" />
+  <project path="external/toybox" name="LineageOS/android_external_toybox" groups="pdk" />
+  <project path="external/zlib" name="LineageOS/android_external_zlib" groups="pdk" />
+
+  <!-- Prebuilts -->
+  <project path="prebuilts/clang/linux-x86/host/3.6" name="platform/prebuilts/clang/linux-x86/host/3.6" groups="pdk,linux" clone-depth="1" remote="aosp" />
+  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" name="android_gcc_linux-x86_aarch64_aarch64-linux-android-4.9" groups="pdk,linux,arm" clone-depth="1" remote="aospa" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="android_gcc_linux-x86_arm-linux-android-4.9" groups="pdk,linux,arm" clone-depth="1" remote="aospa" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.8" name="platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8" groups="pdk,linux,arm" clone-depth="1" remote="aosp" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8"  groups="pdk,linux" clone-depth="1" remote="aosp" />
+  <project path="prebuilts/ndk" name="platform/prebuilts/ndk" groups="pdk" clone-depth="1" remote="aosp" />
+  <project path="prebuilts/sdk" name="platform/prebuilts/sdk" groups="pdk" clone-depth="1" remote="aosp" />
+  <project path="prebuilts/misc" name="platform/prebuilts/misc" groups="pdk" clone-depth="1" remote="aosp" />
+
+  <!-- System -->
+  <project path="system/core" name="LineageOS/android_system_core" groups="pdk" />
+  <project path="system/extras" name="LineageOS/android_system_extras" groups="pdk" />
+  <project path="system/netd" name="LineageOS/android_system_netd" groups="pdk" />
+
+  <!-- Vendor -->
+  <project path="vendor/cm" name="LineageOS/android_vendor_cm" />
+
+</manifest>
