@@ -26,8 +26,6 @@
            sync-c="true"
            sync-j="4" />
 
-  <!-- TODO: Add: device/qcom/common, libseccomp-helper, dependency fetching and own busybox fork. -->
-
   <!-- Manifest -->
   <project path="manifest" name="mrom-2.0" remote="gs" revision="mrom-6.0" />
 
@@ -36,6 +34,8 @@
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   <project path="bionic" name="LineageOS/android_bionic" groups="pdk" />
+  <project path="bootable/recovery" name="LineageOS/android_bootable_recovery" groups="pdk" />
+  <project path="bootable/recovery-twrp" name="bootable_recovery" remote="gs" revision="android-7.1" />
   <project path="frameworks/native" name="LineageOS/android_frameworks_native" groups="pdk" />
   <project path="hardware/libhardware" name="LineageOS/android_hardware_libhardware" groups="pdk" />
   <project path="system/keymaster" name="LineageOS/android_system_keymaster" groups="pdk" />
@@ -44,6 +44,7 @@
 
   <!-- Devices -->
   <project path="device/qcom/sepolicy" name="LineageOS/android_device_qcom_sepolicy" />
+  <project path="device/qcom/common" name="LineageOS/android_device_qcom_common" />
 
   <!-- External -->
   <project path="external/bison" name="platform/external/bison" groups="pdk" remote="aosp" />
