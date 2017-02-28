@@ -102,4 +102,10 @@
   <!-- Vendor -->
   <project path="vendor/cm" name="LineageOS/android_vendor_cm" />
 
+  <!-- MultiROM -->
+  <project path="system/extras/multirom" name="multirom" remote="gs" revision="mrom-6.0" />
+  <project path="system/extras/multirom/adbd" name="multirom_adbd" remote="gs" revision="mrom-6.0" />
+  <project path="system/extras/multirom/kexec-tools" name="multirom_kexec-tools" remote="gs" revision="mrom-6.0" />
+  <project path="system/extras/libbootimg" name="libbootimg" remote="gs" revision="mrom-6.0" />
+
 </manifest>
