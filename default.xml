@@ -45,9 +45,10 @@
   <!-- Devices -->
   <project path="device/leeco/zl1" name="device_leeco_zl1" remote="gs" revision="cm-13.0" />
   <project path="device/qcom/sepolicy" name="LineageOS/android_device_qcom_sepolicy" />
-  <project path="device/qcom/common" name="LineageOS/android_device_qcom_common" />
+  <project path="device/qcom/common" name="device_qcom_common" remote="gs" revision="cm-13.0" />
 
   <!-- External -->
+  <project path="external/bash" name="external_bash" remote="gs" revision="cm-13.0" />
   <project path="external/bison" name="platform/external/bison" groups="pdk" remote="aosp" />
   <project path="external/boringssl" name="LineageOS/android_external_boringssl" groups="pdk" />
   <project path="external/bouncycastle" name="LineageOS/android_external_bouncycastle" groups="pdk" />
@@ -68,6 +69,7 @@
   <project path="external/libcxx" name="platform/external/libcxx" groups="pdk" remote="aosp" />
   <project path="external/libcxxabi" name="platform/external/libcxxabi" groups="pdk" remote="aosp" />
   <project path="external/libdrm" name="platform/external/libdrm" groups="pdk" remote="aosp" />
+  <project path="external/libncurses" name="LineageOS/android_external_libncurses" groups="pdk" />
   <project path="external/libnl" name="platform/external/libnl" groups="pdk" remote="aosp" />
   <project path="external/libpng" name="platform/external/libpng" groups="pdk" remote="aosp" />
   <project path="external/libselinux" name="LineageOS/android_external_libselinux" groups="pdk" />
